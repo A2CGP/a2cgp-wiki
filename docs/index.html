@@ -8,11 +8,17 @@
   <meta name="description" content="Description" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
   <!-- Theme: Simple (light + dark) -->
-  <link rel="stylesheet" media="(prefers-color-scheme: light)"
-    href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" />
-  <link rel="stylesheet" media="(prefers-color-scheme: dark)"
-    href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css" />
+  <link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" />
+  <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css" />
+  <style>
+    :root {
+      --sidebar-nav-pagelink-background: left/1em no-repeat url(data:image/svg+xml;base64,PHN2ZyB0PSIxNTk4NTQ1NjIzOTMxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjgxNzMiCiAgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPgogIDxwYXRoCiAgICBkPSJNODEyLjggMjY4LjhsLTE4NS42LTE4NS42Yy0xMi44LTEyLjgtMjguOC0xOS4yLTQ0LjgtMTkuMkgyNTZjLTM1LjIgMC02NCAyOC44LTY0IDY0djc2OGMwIDM1LjIgMjguOCA2NCA2NCA2NGg1MTJjMzUuMiAwIDY0LTI4LjggNjQtNjRWMzEzLjZjMC0xNi02LjQtMzItMTkuMi00NC44eiBtLTcwLjQgMTkuMkg2MDhWMTUzLjZMNzQyLjQgMjg4ek03MDQgODk2SDI1NlYxMjhoMjg4djE2MGMwIDM1LjIgMjguOCA2NCA2NCA2NGgxNjB2NTQ0aC02NHoiCiAgICBwLWlkPSI4MTc0Ij48L3BhdGg+Cjwvc3ZnPgo=);
+      --sidebar-nav-pagelink-background--loaded: left/1em no-repeat url(data:image/svg+xml;base64,PHN2ZyB0PSIxNTk4NTQ1MTE2ODQ2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIyNTciCiAgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPgogIDxwYXRoIGQ9Ik00NDggMTI4aDUxMmE2NCA2NCAwIDAgMSA2NCA2NHYzMjBhNjQgNjQgMCAwIDEtNjQgNjRINDQ4YTY0IDY0IDAgMCAxLTY0LTY0VjE5MmE2NCA2NCAwIDAgMSA2NC02NHoiCiAgICBmaWxsPSIjNzliOGZmIiBwLWlkPSIyMjU4Ij48L3BhdGg+CiAgPHBhdGgKICAgIGQ9Ik02NCA2NGg0MDguNDQ4YTY0IDY0IDAgMCAxIDU3LjIxNiAzNS4zOTJsOTIuNjcyIDE4NS4yMTZhNjQgNjQgMCAwIDAgNTcuMjE2IDM1LjM5Mkg5NjBhNjQgNjQgMCAwIDEgNjQgNjR2NTEyYTY0IDY0IDAgMCAxLTY0IDY0SDY0YTY0IDY0IDAgMCAxLTY0LTY0VjEyOGE2NCA2NCAwIDAgMSA2NC02NHoiCiAgICBmaWxsPSIjNzliOGZmIiBwLWlkPSIyMjU5Ij48L3BhdGg+Cjwvc3ZnPgo=);
+      --sidebar-nav-pagelink-background--active: left/1em no-repeat url(data:image/svg+xml;base64,PHN2ZyB0PSIxNTk4NTQ1MTE2ODQ2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIyNTciCiAgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPgogIDxwYXRoIGQ9Ik00NDggMTI4aDUxMmE2NCA2NCAwIDAgMSA2NCA2NHYzMjBhNjQgNjQgMCAwIDEtNjQgNjRINDQ4YTY0IDY0IDAgMCAxLTY0LTY0VjE5MmE2NCA2NCAwIDAgMSA2NC02NHoiCiAgICBmaWxsPSIjNzliOGZmIiBwLWlkPSIyMjU4Ij48L3BhdGg+CiAgPHBhdGgKICAgIGQ9Ik02NCA2NGg0MDguNDQ4YTY0IDY0IDAgMCAxIDU3LjIxNiAzNS4zOTJsOTIuNjcyIDE4NS4yMTZhNjQgNjQgMCAwIDAgNTcuMjE2IDM1LjM5Mkg5NjBhNjQgNjQgMCAwIDEgNjQgNjR2NTEyYTY0IDY0IDAgMCAxLTY0IDY0SDY0YTY0IDY0IDAgMCAxLTY0LTY0VjEyOGE2NCA2NCAwIDAgMSA2NC02NHoiCiAgICBmaWxsPSIjNzliOGZmIiBwLWlkPSIyMjU5Ij48L3BhdGg+Cjwvc3ZnPgo=);
+      --sidebar-nav-pagelink-background--collapse: left/1em no-repeat url(data:image/svg+xml;base64,PHN2ZyB0PSIxNTk4NTQ1MTE2ODQ2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIyNTciCiAgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPgogIDxwYXRoIGQ9Ik00NDggMTI4aDUxMmE2NCA2NCAwIDAgMSA2NCA2NHYzMjBhNjQgNjQgMCAwIDEtNjQgNjRINDQ4YTY0IDY0IDAgMCAxLTY0LTY0VjE5MmE2NCA2NCAwIDAgMSA2NC02NHoiCiAgICBmaWxsPSIjNzliOGZmIiBwLWlkPSIyMjU4Ij48L3BhdGg+CiAgPHBhdGgKICAgIGQ9Ik02NCA2NGg0MDguNDQ4YTY0IDY0IDAgMCAxIDU3LjIxNiAzNS4zOTJsOTIuNjcyIDE4NS4yMTZhNjQgNjQgMCAwIDAgNTcuMjE2IDM1LjM5Mkg5NjBhNjQgNjQgMCAwIDEgNjQgNjR2NTEyYTY0IDY0IDAgMCAxLTY0IDY0SDY0YTY0IDY0IDAgMCAxLTY0LTY0VjEyOGE2NCA2NCAwIDAgMSA2NC02NHoiCiAgICBmaWxsPSIjNzliOGZmIiBwLWlkPSIyMjU5Ij48L3BhdGg+Cjwvc3ZnPgo=);
+    }
+  </style>
 </head>
 
 <body>
@@ -22,33 +28,28 @@
       name: 'A2CGP',
       repo: 'https://github.com/a2cgp/tutorials',
       alias: {
-        '/_sidebar.md': '/zh-cn/_sidebar.md',
-        '/.*/_sidebar.md': '/zh-cn/_sidebar.md',
+        '/.*/_sidebar.md': '/_sidebar.md',
       },
       loadSidebar: true,
-      subMaxLevel: 2,
+      subMaxLevel: 1,
+      sidebarDisplayLevel: 1,
       relativePath: true,
       auto2top: true,
-      autoHeader: true,
       search: {
         depth: 4,
         noData: {
           '/': '暂无内容',
-          '/zh-cn/': '暂无内容',
         },
         placeholder: {
           '/': '搜索',
-          '/zh-cn/': '搜索',
         },
       },
       pagination: {
         previousText: {
           '/': '上一章节',
-          '/zh-cn/': '上一章节',
         },
         nextText: {
           '/': '下一章节',
-          '/zh-cn/': '下一章节',
         },
         crossChapter: true,
         crossChapterText: true,
@@ -56,15 +57,12 @@
       copyCode: {
         buttonText: {
           '/': '复制代码',
-          '/zh-cn/': '复制代码',
         },
         errorText: {
           '/': '未知错误',
-          '/zh-cn/': '未知错误',
         },
         successText: {
           '/': '已复制',
-          '/zh-cn/': '已复制',
         },
       },
     };
@@ -74,6 +72,11 @@
   <!-- docsify-themeable -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <!-- LaTeX display engine -->
+  <script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!--  docsify-latex plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
